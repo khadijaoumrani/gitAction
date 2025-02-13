@@ -1,0 +1,14 @@
+name: Test Simple Workflow
+
+on: 
+  push:
+    branches:
+      - main  # S'exécute à chaque push sur la branche main
+
+jobs:
+  test:
+    runs-on: ubuntu-latest  # Utilise Ubuntu comme environnement
+
+    steps:
+      - name: Étape 1 - Afficher un message
+        run: echo "Hello, GitHub Actions!"
