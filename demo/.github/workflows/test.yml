@@ -1,14 +1,17 @@
-name: Test Simple Workflow
+name: Test Simple Workflow kh
 
 on: 
   push:
     branches:
-      - main  # S'exécute à chaque push sur la branche main
+      - main  # Vérifie que ta branche est bien "main"
 
 jobs:
   test:
     runs-on: ubuntu-latest  # Utilise Ubuntu comme environnement
 
     steps:
-      - name: Étape 1 - Afficher un message
+      - name: Cloner le repo
+        uses: actions/checkout@v3
+
+      - name: Afficher un message
         run: echo "Hello, GitHub Actions!"
